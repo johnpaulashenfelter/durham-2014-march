@@ -12,23 +12,21 @@ class Bottles
     when 0
       "No more #{container} of #{contents} #{location}, no more #{container} of #{contents}.\nGo to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
     when 1
-      "#{number} #{container(number)} of #{contents} #{location}, #{number} #{container(number)} of #{contents}.\nTake it down and pass it around, no more #{container} of #{contents} #{location}.\n"
+      "#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\nTake it down and pass it around, no more #{container} of #{contents} #{location}.\n"
     else
-      "#{number} #{container} of #{contents} #{location}, #{number} #{container} of #{contents}.\nTake one down and pass it around, #{number-1} #{container(number-1)} of #{contents} #{location}.\n"
+      "#{say_count(number)} #{container} of #{contents} #{location}, #{say_count(number)} #{container} of #{contents}.\nTake one down and pass it around, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     end
   end
 end
 
 private
 
+def say_count(count)
+  count == 0 ? 'no more' : count
+end
+
 def container(count=99)
-  if count == 0
-    "no more bottles"
-  elsif count == 1
-    "bottle"
-  else
-    "bottles"
-  end
+  count > 1 ? "bottles" : "bottle"
 end
 
 def contents
