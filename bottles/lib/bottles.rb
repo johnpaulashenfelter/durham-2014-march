@@ -10,7 +10,7 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "No more #{container} of #{contents} #{location}, no more #{container} of #{contents}.\nGo to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
+      "No more #{container} of #{contents} #{location}, say_count(number) #{container} of #{contents}.\nGo to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
     when 1
       "#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\nTake it down and pass it around, no more #{container} of #{contents} #{location}.\n"
     else
