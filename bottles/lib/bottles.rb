@@ -10,13 +10,13 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "No more #{container}s of #{contents} on the wall, no more #{container}s of #{contents}.\nGo to the store and buy some more, 99 #{container}s of #{contents} on the wall.\n"
+      "No more #{container}s of #{contents} #{location}, no more #{container}s of #{contents}.\nGo to the store and buy some more, 99 #{container}s of #{contents} #{location}.\n"
     when 1
-      "1 #{container} of #{contents} on the wall, 1 #{container} of #{contents}.\nTake it down and pass it around, no more #{container}s of #{contents} on the wall.\n"
+      "1 #{container} of #{contents} #{location}, 1 #{container} of #{contents}.\nTake it down and pass it around, no more #{container}s of #{contents} #{location}.\n"
     when 2
-      "2 #{container}s of #{contents} on the wall, 2 #{container}s of #{contents}.\nTake one down and pass it around, 1 #{container} of #{contents} on the wall.\n"
+      "2 #{container}s of #{contents} #{location}, 2 #{container}s of #{contents}.\nTake one down and pass it around, 1 #{container} of #{contents} #{location}.\n"
     else
-      "#{number} #{container}s of #{contents} on the wall, #{number} #{container}s of #{contents}.\nTake one down and pass it around, #{number-1} #{container}s of #{contents} on the wall.\n"
+      "#{number} #{container}s of #{contents} #{location}, #{number} #{container}s of #{contents}.\nTake one down and pass it around, #{number-1} #{container}s of #{contents} #{location}.\n"
     end
   end
 end
@@ -29,4 +29,8 @@ end
 
 def contents
   "beer"
+end
+
+def location
+  "on the wall"
 end
