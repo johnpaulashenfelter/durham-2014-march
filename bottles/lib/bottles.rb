@@ -20,10 +20,11 @@ end
 private
 
 def say_count(count)
-  if count < Bottles::GONE
-    Bottles::MAX
-  elsif count == Bottles::GONE
+  case count
+  when Bottles::GONE
     'no more'
+  when -1
+    Bottles::MAX
   else
     count
   end
@@ -42,9 +43,10 @@ def location
 end
 
 def first_action(number)
-  if number == Bottles::GONE
+  case number
+  when Bottles::GONE
     "Go to the store"
-  elsif number == Bottles::MIN
+  when Bottles::MIN
     "Take it down"
   else
     "Take one down"
@@ -52,7 +54,12 @@ def first_action(number)
 end
 
 def second_action(number)
-  number == Bottles::GONE ? "buy some more" : "pass it around"
+  case number
+  when Bottles::GONE
+    "buy some more"
+  else
+    "pass it around"
+  end
 end
 
 def line1(number)
