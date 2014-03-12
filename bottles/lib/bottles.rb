@@ -9,7 +9,7 @@ class Bottles
 
   def verse(number)
     if number == 0
-      "#{line1(number).capitalize}#{first_action(number)} and buy some more, 99 #{container} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and buy some more, 99 #{container(number-1)} of #{contents} #{location}.\n"
     else
       "#{line1(number).capitalize}#{first_action(number)} and #{second_action}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     end
@@ -22,7 +22,7 @@ def say_count(count)
   count == 0 ? 'no more' : count
 end
 
-def container(count=99)
+def container(count)
   count == 1 ? "bottle" : "bottles"
 end
 
@@ -34,7 +34,7 @@ def location
   "on the wall"
 end
 
-def first_action(number=99)
+def first_action(number)
   if number == 1
     "Take it down"
   elsif number == 0
