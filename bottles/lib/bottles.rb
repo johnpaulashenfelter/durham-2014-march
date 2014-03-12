@@ -10,11 +10,11 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "#{line1(number).capitalize}Go to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and buy some more, 99 #{container} of #{contents} #{location}.\n"
     when 1
-      "#{line1(number).capitalize}#{first_action} and #{second_action}, #{say_count(number-1)} #{container} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and #{second_action}, #{say_count(number-1)} #{container} of #{contents} #{location}.\n"
     else
-      "#{line1(number).capitalize}Take one down and #{second_action}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and #{second_action}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     end
   end
 end
@@ -37,8 +37,14 @@ def location
   "on the wall"
 end
 
-def first_action
-  "Take it down"
+def first_action(number=99)
+  if number == 1
+    "Take it down"
+  elsif number == 0
+    "Go to the store"
+  else
+    "Take one down"
+  end
 end
 
 def second_action
