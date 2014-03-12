@@ -1,6 +1,7 @@
 class Bottles
+  MAX=99
   def sing
-    verses(99, 0)
+    verses(Bottles::MAX, 0)
   end
 
   def verses(upper_bound, lower_bound)
@@ -18,7 +19,7 @@ def say_count(count)
   if count == 0
     'no more'
   elsif count < 0
-    '99'
+    Bottles::MAX
   else
     count
   end
