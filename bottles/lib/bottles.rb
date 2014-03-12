@@ -12,7 +12,7 @@ class Bottles
   end
 
   def verse(number)
-    "#{line1(number).capitalize}#{line2(number).capitalize}"
+    "#{line1(number)}#{line2(number)}"
   end
 end
 
@@ -55,9 +55,9 @@ def second_action(number)
 end
 
 def line1(number)
-"#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\n"
+"#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\n".capitalize
 end
 
 def line2(number)
-  "#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
+  "#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n".capitalize
 end
