@@ -10,13 +10,19 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
+      "No more #{container}s of beer on the wall, no more #{container}s of beer.\nGo to the store and buy some more, 99 #{container}s of beer on the wall.\n"
     when 1
-      "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n"
+      "1 #{container} of beer on the wall, 1 #{container} of beer.\nTake it down and pass it around, no more #{container}s of beer on the wall.\n"
     when 2
-      "2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n"
+      "2 #{container}s of beer on the wall, 2 #{container}s of beer.\nTake one down and pass it around, 1 #{container} of beer on the wall.\n"
     else
-      "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake one down and pass it around, #{number-1} bottles of beer on the wall.\n"
+      "#{number} #{container}s of beer on the wall, #{number} #{container}s of beer.\nTake one down and pass it around, #{number-1} #{container}s of beer on the wall.\n"
     end
   end
+end
+
+private
+
+def container
+  "bottle"
 end
