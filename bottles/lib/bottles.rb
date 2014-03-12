@@ -22,7 +22,13 @@ end
 private
 
 def container(count=99)
-  count > 1 ? "bottles" : "bottle"
+  if count == 0
+    "no more bottles"
+  elsif count == 1
+    "bottle"
+  else
+    "bottles"
+  end
 end
 
 def contents
