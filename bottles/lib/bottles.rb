@@ -8,11 +8,7 @@ class Bottles
   end
 
   def verse(number)
-    if number == 0
       "#{line1(number).capitalize}#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
-    else
-      "#{line1(number).capitalize}#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
-    end
   end
 end
 
