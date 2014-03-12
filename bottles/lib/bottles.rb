@@ -9,9 +9,9 @@ class Bottles
 
   def verse(number)
     if number == 0
-      "#{line1(number).capitalize}#{first_action(number)} and buy some more, 99 #{container(number-1)} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     else
-      "#{line1(number).capitalize}#{first_action(number)} and #{second_action}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}#{first_action(number)} and #{second_action(number)}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     end
   end
 end
@@ -19,7 +19,13 @@ end
 private
 
 def say_count(count)
-  count == 0 ? 'no more' : count
+  if count == 0
+    'no more'
+  elsif count < 0
+    '99'
+  else
+    count
+  end
 end
 
 def container(count)
@@ -44,8 +50,8 @@ def first_action(number)
   end
 end
 
-def second_action
-  "pass it around"
+def second_action(number)
+  number == 0 ? "buy some more" : "pass it around"
 end
 
 def line1(number)
