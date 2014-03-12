@@ -14,7 +14,7 @@ class Bottles
     when 1
       "#{number} #{container} of #{contents} #{location}, #{number} #{container} of #{contents}.\nTake it down and pass it around, no more #{container}s of #{contents} #{location}.\n"
     when 2
-      "#{number} #{container}s of #{contents} #{location}, #{number} #{container}s of #{contents}.\nTake one down and pass it around, #{number} #{container} of #{contents} #{location}.\n"
+      "#{number} #{container}s of #{contents} #{location}, #{number} #{container}s of #{contents}.\nTake one down and pass it around, #{number-1} #{container} of #{contents} #{location}.\n"
     else
       "#{number} #{container}s of #{contents} #{location}, #{number} #{container}s of #{contents}.\nTake one down and pass it around, #{number-1} #{container}s of #{contents} #{location}.\n"
     end
