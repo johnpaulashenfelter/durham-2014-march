@@ -13,8 +13,6 @@ class Bottles
       "No more #{container} of #{contents} #{location}, no more #{container} of #{contents}.\nGo to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
     when 1
       "#{number} #{container(number)} of #{contents} #{location}, #{number} #{container(number)} of #{contents}.\nTake it down and pass it around, no more #{container} of #{contents} #{location}.\n"
-    when 2
-      "#{number} #{container} of #{contents} #{location}, #{number} #{container} of #{contents}.\nTake one down and pass it around, #{number-1} #{container(number-1)} of #{contents} #{location}.\n"
     else
       "#{number} #{container} of #{contents} #{location}, #{number} #{container} of #{contents}.\nTake one down and pass it around, #{number-1} #{container(number-1)} of #{contents} #{location}.\n"
     end
