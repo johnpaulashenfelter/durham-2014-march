@@ -1,10 +1,11 @@
 class Bottles
 
   MAX=99
-  MIN=0
+  MIN=1
+  GONE=0
 
   def sing
-    verses(Bottles::MAX, Bottles::MIN)
+    verses(Bottles::MAX, Bottles::GONE)
   end
 
   def verses(upper_bound, lower_bound)
@@ -19,10 +20,10 @@ end
 private
 
 def say_count(count)
-  if count == 0
-    'no more'
-  elsif count < 0
+  if count < Bottles::GONE
     Bottles::MAX
+  elsif count == Bottles::GONE
+    'no more'
   else
     count
   end
@@ -41,21 +42,21 @@ def location
 end
 
 def first_action(number)
-  if number == 1
-    "Take it down"
-  elsif number == Bottles::MIN
+  if number == Bottles::GONE
     "Go to the store"
+  elsif number == Bottles::MIN
+    "Take it down"
   else
     "Take one down"
   end
 end
 
 def second_action(number)
-  number == Bottles::MIN ? "buy some more" : "pass it around"
+  number == Bottles::GONE ? "buy some more" : "pass it around"
 end
 
 def line1(number)
-"#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\n".capitalize
+  "#{say_count(number)} #{container(number)} of #{contents} #{location}, #{say_count(number)} #{container(number)} of #{contents}.\n".capitalize
 end
 
 def line2(number)
