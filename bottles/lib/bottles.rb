@@ -1,7 +1,10 @@
 class Bottles
+
   MAX=99
+  MIN=0
+
   def sing
-    verses(Bottles::MAX, 0)
+    verses(Bottles::MAX, Bottles::MIN)
   end
 
   def verses(upper_bound, lower_bound)
@@ -40,7 +43,7 @@ end
 def first_action(number)
   if number == 1
     "Take it down"
-  elsif number == 0
+  elsif number == Bottles::MIN
     "Go to the store"
   else
     "Take one down"
@@ -48,7 +51,7 @@ def first_action(number)
 end
 
 def second_action(number)
-  number == 0 ? "buy some more" : "pass it around"
+  number == Bottles::MIN ? "buy some more" : "pass it around"
 end
 
 def line1(number)
