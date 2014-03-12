@@ -12,9 +12,9 @@ class Bottles
     when 0
       "#{line1(number).capitalize}Go to the store and buy some more, 99 #{container} of #{contents} #{location}.\n"
     when 1
-      "#{line1(number).capitalize}Take it down and pass it around, #{say_count(number-1)} #{container} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}Take it down and #{action}, #{say_count(number-1)} #{container} of #{contents} #{location}.\n"
     else
-      "#{line1(number).capitalize}Take one down and pass it around, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
+      "#{line1(number).capitalize}Take one down and #{action}, #{say_count(number-1)} #{container(number-1)} of #{contents} #{location}.\n"
     end
   end
 end
@@ -35,6 +35,10 @@ end
 
 def location
   "on the wall"
+end
+
+def action
+  "pass it around"
 end
 
 def line1(number)
