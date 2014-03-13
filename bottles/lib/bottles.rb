@@ -18,5 +18,51 @@ class Bottles
     else
       "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake one down and pass it around, #{number-1} bottles of beer on the wall.\n"
     end
+
+    "#{inventory(number)} #{container(number)} #{liquid} #{location}, ".capitalize +
+    "#{inventory(number)} #{container(number)} #{liquid}.\n" +
+    "#{action(number)}, " +
+    "#{inventory(number-1)} #{container(number-1)} #{liquid} #{location}.\n"
+  end
+
+  private
+
+  def inventory(number)
+    case number
+    when -1
+      99
+    when 0
+      'no more'
+    else
+      number
+    end
+  end
+
+  def container(number)
+    case number
+    when 1
+      'bottle'
+    else
+      'bottles'
+    end
+  end
+
+  def action(number)
+    case number
+    when 0
+      'Go to the store and buy some more'
+    when 1
+      'Take it down and pass it around'
+    else
+      'Take one down and pass it around'
+    end
+  end
+
+  def liquid
+    'of beer'
+  end
+
+  def location
+    'on the wall'
   end
 end
