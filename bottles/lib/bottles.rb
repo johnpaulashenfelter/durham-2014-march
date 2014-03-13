@@ -13,16 +13,26 @@ class Bottles
 end
 
 class Verse
-  attr_reader :number
+  attr_reader :number, :verse_number
   def initialize(number)
     @number = number
+    @verse_number = case number
+    when 0
+      VerseNumber0.new(number)
+    when 1
+      VerseNumber1.new(number)
+    when 2
+      VerseNumber2.new(number)
+    else
+      VerseNumber.new(number)
+    end
   end
 
   def to_s
-    "#{current_inventory} #{current_container} #{liquid} #{location}, ".capitalize +
-    "#{current_inventory} #{current_container} #{liquid}.\n" +
-    "#{action}, " +
-    "#{next_inventory} #{next_container} #{liquid} #{location}.\n"
+    "#{verse_number.current_inventory} #{verse_number.current_container} #{liquid} #{location}, ".capitalize +
+    "#{verse_number.current_inventory} #{verse_number.current_container} #{liquid}.\n" +
+    "#{verse_number.action}, " +
+    "#{verse_number.next_inventory} #{verse_number.next_container} #{liquid} #{location}.\n"
   end
 
   private
@@ -34,60 +44,67 @@ class Verse
   def location
     'on the wall'
   end
+end
+
+class VerseNumber
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
 
   def current_inventory
-    case number
-    when 0
-      'no more'
-    else
-      number
-    end
+    number
   end
 
   def next_inventory
-    case number
-    when 0
-      99
-    when 1
-      'no more'
-    else
-      number - 1
-    end
+    number - 1
   end
 
   def current_container
-    case number
-    when 1
-      'bottle'
-    else
-      'bottles'
-    end
+    'bottles'
   end
 
   def next_container
-    case number
-    when 2
-      'bottle'
-    else
-      'bottles'
-    end
+    'bottles'
   end
 
   def action
-    case number
-    when 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun} down and pass it around"
-    end
+    "Take one down and pass it around"
   end
 
-  def pronoun
-    case number
-    when 1
-      'it'
-    else
-      'one'
-    end
+end
+
+class VerseNumber0 < VerseNumber
+  def next_inventory
+    99
+  end
+
+  def current_inventory
+    'no more'
+  end
+
+  def action
+    'Go to the store and buy some more'
+  end
+end
+
+class VerseNumber1 < VerseNumber
+  def action
+    "Take it down and pass it around"
+  end
+
+  def current_container
+    'bottle'
+  end
+
+  def next_inventory
+    'no more'
+  end
+end
+
+class VerseNumber2 < VerseNumber
+  def next_container
+    'bottle'
   end
 end
