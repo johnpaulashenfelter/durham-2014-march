@@ -1,4 +1,5 @@
 class Bottles
+
   def sing
     verses(99, 0)
   end
@@ -8,9 +9,25 @@ class Bottles
   end
 
   def verse(number)
+    Verse.new(number).to_s
+  end
+
+end
+
+class Verse
+  attr_reader :number
+  def initialize(number)
+    @number = number
+  end
+
+  def to_s
+    verse(number)
+  end
+
+  def verse(number)
     "#{inventory(number)} #{container(number)} #{liquid} #{location}, ".capitalize +
     "#{inventory(number)} #{container(number)} #{liquid}.\n" +
-    "#{action(number)}, " +
+    "#{action}, " +
     "#{inventory(number-1)} #{container(number-1)} #{liquid} #{location}.\n"
   end
 
@@ -36,7 +53,7 @@ class Bottles
     end
   end
 
-  def action(number)
+  def action
     case number
     when 0
       'Go to the store and buy some more'
