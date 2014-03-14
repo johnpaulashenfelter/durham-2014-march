@@ -92,14 +92,17 @@ puts """#{chant(1)}#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
 """
   end
 
-
-  def line12
+  def line(verse)
     line = 'This is'
     11.downto(0).each do |n|
       stanza = LEXICON[n]
       line = line + " #{stanza[:thing]} #{stanza[:action]}"
     end
     "#{line}."
+  end
+
+  def line12
+    line(11)
   end
 
 end
