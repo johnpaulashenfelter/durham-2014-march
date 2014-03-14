@@ -17,52 +17,12 @@ LEXICON = [
   {thing: 'the horse and the hound and the horn', action: 'that belonged to'},
 ]
 
-ACTIONS = [
-  'the house that Jack built',
-  'malt that lay in'
-]
-
-  def intro
-    'This is'
-  end
-
-  def descriptive_thing(verse)
-    ACTIONS[verse]
-  end
-
-  def chant(verse=1)
-    n=verse-1
-    song = "#{intro} #{descriptive_thing(n)}.\n\n"
-    song
-  end
-
   def sing
-
-puts """#{line(0)}
-
-#{line(1)}
-
-#{line(2)}
-
-#{line(3)}
-
-#{line(4)}
-
-#{line(5)}
-
-#{line(6)}
-
-#{line(7)}
-
-#{line(8)}
-
-#{line(9)}
-
-#{line(10)}
-
-#{line(11)}
-
-"""
+    out = ''
+    0.upto(11) do |n|
+      out = out + "#{line(n)}\n\n"
+    end
+    puts out
   end
 
   def line(verse)
@@ -75,7 +35,6 @@ puts """#{line(0)}
   end
 
 end
-
 
 Song.new.sing
 
