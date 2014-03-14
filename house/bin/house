@@ -1,26 +1,15 @@
 #!/usr/bin/env ruby
-
 class Song
 
-LEXICON = [
-  'the house that Jack built',
-  'the malt that lay in',
-  'the rat that ate',
-  'the cat that killed',
-  'the dog that worried',
-  'the cow with the crumpled horn that tossed',
-  'the maiden all forlorn that milked',
-  'the man all tattered and torn that kissed',
-  'the priest all shaven and shorn that married',
-  'the rooster that crowed in the morn that woke',
-  'the farmer sowing his corn that kept',
-  'the horse and the hound and the horn that belonged to',
-]
+  attr_reader :lyrics
+  def initialize(lyrics)
+    @lyrics = lyrics
+  end
 
   def sing
     out = ''
-    0.upto(11) do |n|
-      out = out + "#{line(n)}\n\n"
+    (0..11).map do |n|
+      out = out + "#{line(n)}"
     end
     puts out
   end
@@ -28,13 +17,28 @@ LEXICON = [
   def line(verse)
     line = 'This is'
     verse.downto(0).each do |n|
-      stanza = LEXICON[n]
-      line = line + " #{stanza}"
+      line = line + " #{lyrics[n]}"
     end
-    "#{line}."
+    "#{line}.\n\n"
   end
 
 end
 
-Song.new.sing
+class Lyrics
+  DEFAULT = [
+    'the house that Jack built',
+    'the malt that lay in',
+    'the rat that ate',
+    'the cat that killed',
+    'the dog that worried',
+    'the cow with the crumpled horn that tossed',
+    'the maiden all forlorn that milked',
+    'the man all tattered and torn that kissed',
+    'the priest all shaven and shorn that married',
+    'the rooster that crowed in the morn that woke',
+    'the farmer sowing his corn that kept',
+    'the horse and the hound and the horn that belonged to',
+  ]
+end
 
+Song.new(Lyrics::DEFAULT).sing
