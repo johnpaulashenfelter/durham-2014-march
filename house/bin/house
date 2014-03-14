@@ -2,6 +2,21 @@
 
 class Song
 
+THINGS = [
+'malt',
+'rat',
+'cat',
+'dog',
+'cow',
+'maiden',
+'man',
+'priest',
+'rooster',
+'farmer',
+'horse and the hound and the horn'
+]
+
+
 def self.sing
 
 puts """#{intro} house that Jack built.
