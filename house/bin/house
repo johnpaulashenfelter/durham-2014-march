@@ -17,12 +17,17 @@ THINGS = [
 'horse and the hound and the horn'
 ]
 
+ACTIONS = [
+  'house that Jack built',
+  'malt that lay in the'
+]
+
   def initialize
-    @counter = 0
+    @counter = 2
   end
 
   def intro
-    'This is the'
+    'This is'
   end
 
   def outro
@@ -35,31 +40,35 @@ THINGS = [
     thing
   end
 
+  def descriptive_thing(verse)
+    ACTIONS[verse]
+  end
+
   def sing
 
-puts """#{intro} #{thing} #{outro}
+puts """#{intro} the #{descriptive_thing(0)}.
 
-#{intro} #{thing} that lay in the house #{outro}
+#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
 
-#{intro} #{thing} that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
-#{intro} #{thing} that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house #{outro}
 
 """
   end
@@ -68,3 +77,4 @@ puts """#{intro} #{thing} #{outro}
 end
 
 Song.new.sing
+
