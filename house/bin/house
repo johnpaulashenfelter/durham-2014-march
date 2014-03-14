@@ -17,42 +17,13 @@ LEXICON = [
   {thing: 'the horse and the hound and the horn', action: 'that belonged to'},
 ]
 
-THINGS = [
-'house',
-'malt',
-'rat',
-'cat',
-'dog',
-'cow',
-'maiden',
-'man',
-'priest',
-'rooster',
-'farmer',
-'horse and the hound and the horn'
-]
-
 ACTIONS = [
   'the house that Jack built',
   'malt that lay in'
 ]
 
-  def initialize
-    @counter = 2
-  end
-
   def intro
     'This is'
-  end
-
-  def outro
-    'that Jack built.'
-  end
-
-  def thing
-    thing = THINGS[@counter]
-    @counter = @counter+1
-    thing
   end
 
   def descriptive_thing(verse)
@@ -67,23 +38,25 @@ ACTIONS = [
 
   def sing
 
-puts """#{chant(1)}#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
+puts """#{line(0)}
 
-#{intro} the #{thing} that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(1)}
 
-#{intro} the #{thing} that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(2)}
 
-#{intro} the #{thing} that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(3)}
 
-#{intro} the #{thing} with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(4)}
 
-#{intro} the #{thing} all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(5)}
 
-#{intro} the #{thing} all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(6)}
 
-#{intro} the #{thing} all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(7)}
 
-#{intro} the #{thing} that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line(8)}
+
+#{line(9)}
 
 #{line(10)}
 
