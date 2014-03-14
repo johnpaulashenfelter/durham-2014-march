@@ -45,15 +45,14 @@ ACTIONS = [
   end
 
   def chant(verse=1)
-    n=1
+    n=verse-1
     song = "#{intro} #{descriptive_thing(n)}.\n\n"
+    song
   end
 
   def sing
 
-puts """#{chant(0)}.
-
-#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
+puts """#{chant(1)}#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
 
 #{intro} the #{thing} that ate the malt that lay in #{descriptive_thing(0)}.
 
