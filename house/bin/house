@@ -2,6 +2,21 @@
 
 class Song
 
+LEXICON = [
+  {thing: 'the house', action: 'that Jack built'},
+  {thing: 'the malt', action: 'that lay in'},
+  {thing: 'the rat', action: 'that ate'},
+  {thing: 'the cat', action: 'that killed'},
+  {thing: 'the dog', action: 'that worried'},
+  {thing: 'the cow with the crumpled horn', action: 'that tossed'},
+  {thing: 'the maiden all forlorn', action: 'that milked'},
+  {thing: 'the man all tattered and torn', action: 'that kissed'},
+  {thing: 'the priest all shaven and shorn', action: 'that married'},
+  {thing: 'the rooster that crowed in the morn', action: 'that woke'},
+  {thing: 'the farmer sowing his corn', action: 'that kept'},
+  {thing: 'the horse and the hound and the horn', action: 'that belonged to'},
+]
+
 THINGS = [
 'house',
 'malt',
@@ -72,13 +87,23 @@ puts """#{chant(1)}#{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
 
 #{intro} the #{thing} sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
 
-#{intro} the #{thing} that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in #{descriptive_thing(0)}.
+#{line12}
 
 """
   end
 
 
+  def line12
+    line = 'This is'
+    11.downto(0).each do |n|
+      stanza = LEXICON[n]
+      line = line + " #{stanza[:thing]} #{stanza[:action]}"
+    end
+    "#{line}."
+  end
+
 end
+
 
 Song.new.sing
 
