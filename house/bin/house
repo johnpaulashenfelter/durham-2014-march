@@ -2,20 +2,20 @@
 class Song
 
   attr_reader :lyrics
-
   def initialize(lyrics)
     @lyrics = lyrics
   end
 
   def sing
-    out = 'This is'
-    (0..11).map do |n|
+    out = ''
+    (0..lyrics.length-1).map do |n|
       out = out + "#{line(n)}"
     end
     puts out
   end
 
   def line(verse)
+    line = 'This is'
     verse.downto(0).each do |n|
       line = line + " #{lyrics[n]}"
     end
