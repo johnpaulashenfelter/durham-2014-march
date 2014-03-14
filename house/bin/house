@@ -50,7 +50,7 @@ puts """#{intro} the #{descriptive_thing(0)}.
 
 #{intro} the #{descriptive_thing(1)} #{descriptive_thing(0)}.
 
-#{intro} the #{thing} that ate the malt that lay in the house #{outro}
+#{intro} the #{thing} that ate the malt that lay #{descriptive_thing(0)}.
 
 #{intro} the #{thing} that killed the rat that ate the malt that lay in the house #{outro}
 
